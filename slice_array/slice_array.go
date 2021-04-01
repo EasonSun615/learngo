@@ -24,6 +24,7 @@ func arrayTest() {
 }
 
 func sliceTest() {
+	// slice作为函数参数，会将slice的元数据(metadata describing the slice)复制一份，由于slice的元数据包含指向底层数组的指针，所以看起来像是引用传递
 	oldSlice := []int{1, 2, 3}
 	fmt.Println(len(oldSlice), cap(oldSlice))
 	newSlice := oldSlice // 切片底层基于数组，此时两个切片指向同一个底层数组
