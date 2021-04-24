@@ -4,13 +4,24 @@ import "fmt"
 
 const (
 	// 常量组中，后面的如果没有给出类型和值的话，类型和值会复用前一个常量的类型和表达式。
-	Book = iota
-	Close
-	Phone
+	BOOK = iota
+	CLOSE
+	PHONE
+)
+
+// 枚举类型的常量的编码规范：
+// 1.常量均适用大写字母，使用下划线分词
+// 2.如果是枚举类型的常量，需要先创建相应类型。如下所示
+
+type Scheme string
+
+const (
+	HTTP  Scheme = "http"
+	HTTPS Scheme = "https"
 )
 
 func main() {
-	fmt.Println(Book, Close, Phone)
+	fmt.Println(BOOK, CLOSE, PHONE)
 	// iota叫做常量计数器, 主要用来枚举（枚举的时候，常量的值不重要，只要不同就行）
 	// 	1.iota只能在常量组中使用
 	// 2.不同的const定义块互不干扰
